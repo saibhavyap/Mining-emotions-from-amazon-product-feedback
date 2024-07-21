@@ -1,0 +1,15 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block contents %}
+
+    {% if predictions == '0' %}
+        <div class="center">
+            <h1>The Quality of the Product is Not-Good : {{pred}}</h1>
+        </div>
+    {% else %}
+        <div class="center">
+            <h1>The Quality of the Product is Good : {{pred}}</h1>
+        </div>
+    {% endif %}
+
+{% endblock %}

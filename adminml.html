@@ -1,0 +1,41 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+{% block contents %}
+<style>
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td, h2 {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+</style>
+
+<h2>Confusion Matrix</h2>
+<h2>Accuracy: {{ preds }}</h2>
+<table>
+    <tr>
+        <th>s.no</th>
+        <th>0</th>
+        <th>1</th>
+    </tr>
+    <tr>
+        <th>0</th>
+        <td>{{ confusion_matrix.0.0 }}</td>
+        <td>{{ confusion_matrix.0.1 }}</td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td>{{ confusion_matrix.1.0 }}</td>
+        <td>{{ confusion_matrix.1.1 }}</td>
+    </tr>
+</table>
+
+
+
+{% endblock %}
